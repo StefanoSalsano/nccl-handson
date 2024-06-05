@@ -1,0 +1,21 @@
+Installation log
+
+sudo apt install podman
+
+
+
+Notes
+
+podman build -t nccl_image .
+
+podman build --progress=plain -t nccl_image .
+
+#remove container on exit
+podman run -d --rm --name nccl -it localhost/nccl_image bash
+
+#do not remove container on exit
+podman run -d --name nccl -it localhost/nccl_imaage bash
+
+
+#enter the running container:
+podman exec -it nccl bash
