@@ -1,0 +1,17 @@
+config:
+  limits.cpu: "8"
+  limits.memory: 32GB
+description: Simple VM with 8 VCPUs, 32 GB RAM, 128GB root disk
+devices:
+  eth0:
+    name: eth0
+    network: lxdbr0
+    type: nic
+  root:
+    path: /
+    pool: default
+    size: 128GB
+    type: disk
+name: vm-profile-medium
+used_by:
+- /1.0/instances/vm1

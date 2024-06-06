@@ -1,0 +1,29 @@
+architecture: x86_64
+config:
+  image.architecture: amd64
+  image.description: ubuntu 22.04 LTS amd64 (release) (20240514)
+  image.label: release
+  image.os: ubuntu
+  image.release: jammy
+  image.serial: "20240514"
+  image.type: disk-kvm.img
+  image.version: "22.04"
+  volatile.base_image: ce0fb8befe9bd3c653925163e9a5971db96c3e892502fe4e98cbb963b33310c2
+  volatile.cloud-init.instance-id: f43233c0-d35b-40e1-8509-7ce2f86d3166
+  volatile.eth0.host_name: tap0dfb4a05
+  volatile.eth0.hwaddr: 00:16:3e:99:bd:e4
+  volatile.gpu-device.last_state.pci.slot.name: "0000:21:00.0"
+  volatile.last_state.power: RUNNING
+  volatile.uuid: 4d7b9c59-39a2-4905-b56d-c6d60cfd7815
+  volatile.uuid.generation: 4d7b9c59-39a2-4905-b56d-c6d60cfd7815
+  volatile.vsock_id: "2171899342"
+devices:
+  gpu-device:
+    gputype: physical
+    pci: "21:00.0"
+    type: gpu
+ephemeral: false
+profiles:
+- vm-profile-medium
+stateful: false
+description: ""
