@@ -5,7 +5,7 @@
 
 
 # Update package lists
-apt-get update
+DEBIAN_FRONTEND=noninteractive apt-get update
 
 # Install any packages or dependencies here
 apt-get install -y \

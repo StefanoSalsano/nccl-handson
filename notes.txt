@@ -20,7 +20,7 @@ podman run -d --name nccl -it localhost/nccl_imaage bash
 #enter the running container:
 podman exec -it nccl bash
 
-
+#initialize lxd
 gpuserver@gpu-server:~/nccl-handson$ sudo snap install lxd
 snap "lxd" is already installed, see 'snap help refresh'  
 gpuserver@gpu-server:~/nccl-handson$ lxd init
@@ -39,3 +39,5 @@ What IPv6 address should be used? (CIDR subnet notation, “auto” or “none�
 Would you like the LXD server to be available over the network? (yes/no) [default=no]: no
 Would you like stale cached images to be updated automatically? (yes/no) [default=yes]:
 Would you like a YAML "lxd init" preseed to be printed? (yes/no) [default=no]: yes
+
+
