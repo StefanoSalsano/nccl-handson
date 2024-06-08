@@ -1,6 +1,5 @@
 #!/bin/bash
-# execute this file in its location
-# 
+
 
 PMIX=pmix-4.2.9
 PRRTE=prrte-3.0.5
@@ -11,6 +10,9 @@ apt install -y libevent-dev
 
 echo && echo "apt-get install libhwloc-dev"
 apt install -y libhwloc-dev
+
+echo && echo "apt-get install zlib1g-dev"
+apt install -y zlib1g-dev
 
 mkdir $HOME/mpi_install
 cd $HOME/mpi_install
