@@ -47,7 +47,7 @@ adduser mpi
 
 echo "exporting PATH and LD_LIBRARY PATH for root and mpi users"
 echo "export PATH=/usr/local/cuda/bin\${PATH:+:\${PATH}}" >> /root/.bashrc
-echo "export LD_LIBRARY_PATH=/usr/local/cuda-12.2/lib64\${LD_LIBRARY_PATH:+:\${LD_LIBRARY_PATH}}" /root/.bashrc
+echo "export LD_LIBRARY_PATH=/usr/local/cuda-12.2/lib64\${LD_LIBRARY_PATH:+:\${LD_LIBRARY_PATH}}" >> /root/.bashrc
 echo "export PATH=/usr/local/cuda/bin\${PATH:+:\${PATH}}" >> /home/mpi/.bashrc
 echo "export LD_LIBRARY_PATH=/usr/local/cuda-12.2/lib64\${LD_LIBRARY_PATH:+:\${LD_LIBRARY_PATH}}" >> /home/mpi/.bashrc
 
