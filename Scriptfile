@@ -45,12 +45,14 @@ DEBIAN_FRONTEND=noninteractive apt-get install -y cuda-drivers-555
 echo "adduser mpi"
 adduser mpi
 
-echo "exporting PATH and LD_LIBRARY PATH for root and mpi users"
+echo "setup cuda PATH and LD_LIBRARY PATH for root and mpi users"
 echo "export PATH=/usr/local/cuda/bin\${PATH:+:\${PATH}}" >> /root/.bashrc
 echo "export LD_LIBRARY_PATH=/usr/local/cuda-12.2/lib64\${LD_LIBRARY_PATH:+:\${LD_LIBRARY_PATH}}" >> /root/.bashrc
 echo "export PATH=/usr/local/cuda/bin\${PATH:+:\${PATH}}" >> /home/mpi/.bashrc
 echo "export LD_LIBRARY_PATH=/usr/local/cuda-12.2/lib64\${LD_LIBRARY_PATH:+:\${LD_LIBRARY_PATH}}" >> /home/mpi/.bashrc
 
+echo "setup mpi LD_LIBRARY PATH mpi user"
+echo "export LD_LIBRARY_PATH=/usr/local/lib\${LD_LIBRARY_PATH:+:\${LD_LIBRARY_PATH}}" >> /home/mpi/.bashrc
 
 # GDS (GPUDirect Storage) install is disabled at the moment
 #apt-get install nvidia-gds
