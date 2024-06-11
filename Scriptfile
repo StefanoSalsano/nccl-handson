@@ -1,6 +1,4 @@
 #!/bin/bash
-#Use the Ubuntu 22.04 base image
-#FROM ubuntu:22.04
 
 # Update package lists
 echo "apt-get -y update"
@@ -19,7 +17,7 @@ echo "apt-get install -y linux-headers-$(uname -r)"
 DEBIAN_FRONTEND=noninteractive apt-get install -y linux-headers-$(uname -r)
 
 echo "wget https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2204/x86_64/cuda-keyring_1.1-1_all.deb"
-wget https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2204/x86_64/cuda-keyring_1.1-1_all.deb
+wget -O cuda-keyring_1.1-1_all.deb  https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2204/x86_64/cuda-keyring_1.1-1_all.deb
 
 echo "dpkg -i cuda-keyring_1.1-1_all.deb"
 dpkg -i cuda-keyring_1.1-1_all.deb
@@ -43,12 +41,15 @@ DEBIAN_FRONTEND=noninteractive apt-get install -y cuda-drivers-555
 
 # post installation 
 echo "adduser mpi"
-adduser mpi
-adduser mpi sudo
+
+adduser --quiet --disabled-password --gecos "" mpi && \
+	{ echo "mpi:mpi" | chpasswd && adduser mpi sudo; } || true
 
 echo "setup cuda PATH and LD_LIBRARY PATH for root and mpi users"
+
 echo "export PATH=/usr/local/cuda/bin\${PATH:+:\${PATH}}" >> /root/.bashrc
 echo "export LD_LIBRARY_PATH=/usr/local/cuda-12.2/lib64\${LD_LIBRARY_PATH:+:\${LD_LIBRARY_PATH}}" >> /root/.bashrc
+
 echo "export PATH=/usr/local/cuda/bin\${PATH:+:\${PATH}}" >> /home/mpi/.bashrc
 echo "export LD_LIBRARY_PATH=/usr/local/cuda-12.2/lib64\${LD_LIBRARY_PATH:+:\${LD_LIBRARY_PATH}}" >> /home/mpi/.bashrc
 
