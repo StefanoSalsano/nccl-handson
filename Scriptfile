@@ -44,6 +44,7 @@ DEBIAN_FRONTEND=noninteractive apt-get install -y cuda-drivers-555
 # post installation 
 echo "adduser mpi"
 adduser mpi
+adduser mpi sudo
 
 echo "setup cuda PATH and LD_LIBRARY PATH for root and mpi users"
 echo "export PATH=/usr/local/cuda/bin\${PATH:+:\${PATH}}" >> /root/.bashrc
