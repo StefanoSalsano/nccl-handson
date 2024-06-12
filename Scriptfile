@@ -13,6 +13,10 @@ DEBIAN_FRONTEND=noninteractive apt-get install -y gcc
 echo "apt-get install -y wget"
 DEBIAN_FRONTEND=noninteractive apt-get install -y wget
 
+# needed for the creation of nccl package
+echo "apt install build-essential devscripts debhelper fakeroot"
+apt install build-essential devscripts debhelper fakeroot
+
 echo "apt-get install -y linux-headers-$(uname -r)"
 DEBIAN_FRONTEND=noninteractive apt-get install -y linux-headers-$(uname -r)
 
