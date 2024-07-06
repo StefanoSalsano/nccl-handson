@@ -49,6 +49,9 @@ echo "adduser mpi"
 adduser --quiet --disabled-password --gecos "" mpi && \
 	{ echo "mpi:mpi" | chpasswd && adduser mpi sudo; } || true
 
+echo "cp /root/nccl-handson/debug_trace.sh /home/mpi"
+cp /root/nccl-handson/debug_trace.sh /home/mpi
+
 echo "setup cuda PATH and LD_LIBRARY PATH for root and mpi users"
 
 echo "export PATH=/usr/local/cuda/bin\${PATH:+:\${PATH}}" >> /root/.bashrc
