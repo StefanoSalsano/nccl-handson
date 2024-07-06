@@ -13,6 +13,13 @@ tmux new-window -t $TMUX -n W2
 tmux new-window -t $TMUX -n W3
 tmux new-window -t $TMUX -n W4
 tmux new-window -t $TMUX -n W5
+tmux new-window -t $TMUX -n W6
+tmux new-window -t $TMUX -n W7
+tmux new-window -t $TMUX -n W8
+tmux new-window -t $TMUX -n W9
+tmux new-window -t $TMUX -n W10
+tmux new-window -t $TMUX -n W11
+tmux new-window -t $TMUX -n W12
 
 tmux select-window -t $TMUX:W1
 tmux set-option -g mouse on
