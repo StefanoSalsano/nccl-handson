@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# This script is used to configure a VM to host the NVIDIA Container Toolkit
+# see https://ngc.nvidia.com/catalog/containers/nvidia:pytorch
+
 echo "for pkg in docker.io docker-doc docker-compose docker-compose-v2 podman-docker containerd runc; do sudo apt-get remove $pkg; done"
 
 for pkg in docker.io docker-doc docker-compose docker-compose-v2 podman-docker containerd runc; do sudo apt-get remove $pkg; done
