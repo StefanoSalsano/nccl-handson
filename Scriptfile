@@ -49,8 +49,9 @@ echo "adduser mpi"
 adduser --quiet --disabled-password --gecos "" mpi && \
 	{ echo "mpi:mpi" | chpasswd && adduser mpi sudo; } || true
 
-echo "cp /root/nccl-handson/debug_trace.sh /home/mpi"
-cp /root/nccl-handson/debug_trace.sh /home/mpi
+#assuming that ./Scriptfile is run in the same folder of the local git repository
+echo "cp debug_trace.sh /home/mpi"
+cp debug_trace.sh /home/mpi
 
 echo "setup cuda PATH and LD_LIBRARY PATH for root and mpi users"
 
